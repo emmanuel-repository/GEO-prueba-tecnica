@@ -1,0 +1,153 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-05-26",
+  "__export_source": "insomnia",
+  "resources": [
+    {
+      "_id": "wrk_prueba_tecnica",
+      "_type": "workspace",
+      "name": "Prueba Técnica - API",
+      "description": "Colección de endpoints para pruebas"
+    },
+
+    {
+      "_id": "env_base",
+      "_type": "environment",
+      "parentId": "wrk_prueba_tecnica",
+      "name": "Base URL",
+      "data": {
+        "base_url": "http://localhost:8080",
+        "token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc3OTg1Njc0MCwiZXhwIjoxNzc5OTQzMTQwfQ.J4tk2-mZHZzuEPU1t_UNYOyN5gan-Dvkhf5sdnn7mM21wJX_Ax_LQ4FP5VthwtYp"
+      }
+    },
+
+    {
+      "_id": "fld_auth",
+      "_type": "request_group",
+      "parentId": "wrk_prueba_tecnica",
+      "name": "🔐 Auth"
+    },
+    {
+      "_id": "fld_instruments",
+      "_type": "request_group",
+      "parentId": "wrk_prueba_tecnica",
+      "name": "🎸 Instrumentos Musicales"
+    },
+    {
+      "_id": "fld_categories",
+      "_type": "request_group",
+      "parentId": "wrk_prueba_tecnica",
+      "name": "📂 Categorías"
+    },
+
+    {
+      "_id": "req_register",
+      "_type": "request",
+      "parentId": "fld_auth",
+      "name": "Registrar usuario",
+      "method": "POST",
+      "url": "{{ _.base_url }}/auth/register",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"username\": \"admin\",\n  \"email\": \"admin@test.com\",\n  \"password\": \"123456\"\n}"
+      }
+    },
+    {
+      "_id": "req_login",
+      "_type": "request",
+      "parentId": "fld_auth",
+      "name": "Login",
+      "method": "POST",
+      "url": "{{ _.base_url }}/auth/login",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"username\": \"admin\",\n  \"password\": \"123456\"\n}"
+      }
+    },
+
+    {
+      "_id": "req_get_all_instruments",
+      "_type": "request",
+      "parentId": "fld_instruments",
+      "name": "Obtener todos los instrumentos",
+      "method": "GET",
+      "url": "{{ _.base_url }}/musical-instruments",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ _.token }}" }
+      ]
+    },
+    {
+      "_id": "req_get_instrument_by_id",
+      "_type": "request",
+      "parentId": "fld_instruments",
+      "name": "Obtener instrumento por ID",
+      "method": "GET",
+      "url": "{{ _.base_url }}/musical-instruments/1",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ _.token }}" }
+      ]
+    },
+    {
+      "_id": "req_create_instrument",
+      "_type": "request",
+      "parentId": "fld_instruments",
+      "name": "Crear instrumento",
+      "method": "POST",
+      "url": "{{ _.base_url }}/musical-instruments",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "Authorization", "value": "Bearer {{ _.token }}" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Guitarra Fender Stratocaster\",\n  \"type\": \"Guitarra Eléctrica\",\n  \"price\": 15000.00,\n  \"description\": \"Guitarra eléctrica de cuerpo sólido\",\n  \"color\": \"Sunburst\",\n  \"size\": \"Full\",\n  \"brand\": \"Fender\",\n  \"model\": \"Stratocaster\",\n  \"categoryId\": 1\n}"
+      }
+    },
+    {
+      "_id": "req_update_instrument",
+      "_type": "request",
+      "parentId": "fld_instruments",
+      "name": "Actualizar instrumento",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/musical-instruments/1",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "Authorization", "value": "Bearer {{ _.token }}" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Guitarra Gibson Les Paul\",\n  \"type\": \"Guitarra Eléctrica\",\n  \"price\": 20000.00,\n  \"description\": \"Guitarra eléctrica premium\",\n  \"color\": \"Negro\",\n  \"size\": \"Full\",\n  \"brand\": \"Gibson\",\n  \"model\": \"Les Paul Standard\",\n  \"categoryId\": 1\n}"
+      }
+    },
+    {
+      "_id": "req_delete_instrument",
+      "_type": "request",
+      "parentId": "fld_instruments",
+      "name": "Eliminar instrumento",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/musical-instruments/1",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ _.token }}" }
+      ]
+    },
+
+    {
+      "_id": "req_get_categories",
+      "_type": "request",
+      "parentId": "fld_categories",
+      "name": "Obtener todas las categorías",
+      "method": "GET",
+      "url": "{{ _.base_url }}/musical-instruments/categories",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ _.token }}" }
+      ]
+    }
+  ]
+}
