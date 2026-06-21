@@ -49,4 +49,7 @@ public class MusicalInstrument {
     @Column(nullable = false)
     private Integer categoryId;
 
+    @Column(nullable = false)
+    private Integer stock;
+
 }

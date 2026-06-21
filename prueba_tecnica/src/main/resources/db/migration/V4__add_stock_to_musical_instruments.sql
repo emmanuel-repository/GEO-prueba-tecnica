@@ -1,0 +1,2 @@
+ALTER TABLE musical_instruments
+    ADD COLUMN stock INTEGER NOT NULL DEFAULT 0 CHECK (stock >= 0);

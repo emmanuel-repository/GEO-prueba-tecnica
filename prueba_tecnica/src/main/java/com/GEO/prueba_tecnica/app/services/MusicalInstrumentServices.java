@@ -40,6 +40,7 @@ public class MusicalInstrumentServices {
                 .brand(request.getBrand())
                 .price(request.getPrice())
                 .type(request.getType())
+                .stock(request.getStock())
                 .build();
 
         musicalInstrument = musicalInstrumentRepository.save(musicalInstrument);
@@ -75,6 +76,7 @@ public class MusicalInstrumentServices {
         musicalInstrument.setBrand(request.getBrand());
         musicalInstrument.setPrice(request.getPrice());
         musicalInstrument.setType(request.getType());
+        musicalInstrument.setStock(request.getStock());
 
         musicalInstrument = musicalInstrumentRepository.save(musicalInstrument);
 
@@ -166,7 +168,8 @@ public class MusicalInstrumentServices {
                 musicalInstrument.getSize(),
                 musicalInstrument.getBrand(),
                 musicalInstrument.getModel(),
-                musicalInstrument.getCategoryId());
+                musicalInstrument.getCategoryId(),
+                musicalInstrument.getStock());
     }
 
 }

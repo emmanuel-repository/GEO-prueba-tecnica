@@ -40,6 +40,12 @@
       "parentId": "wrk_prueba_tecnica",
       "name": "📂 Categorías"
     },
+    {
+      "_id": "fld_events",
+      "_type": "request_group",
+      "parentId": "wrk_prueba_tecnica",
+      "name": "🎉 Eventos"
+    },
 
     {
       "_id": "req_register",
@@ -107,7 +113,7 @@
       ],
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"name\": \"Guitarra Fender Stratocaster\",\n  \"type\": \"Guitarra Eléctrica\",\n  \"price\": 15000.00,\n  \"description\": \"Guitarra eléctrica de cuerpo sólido\",\n  \"color\": \"Sunburst\",\n  \"size\": \"Full\",\n  \"brand\": \"Fender\",\n  \"model\": \"Stratocaster\",\n  \"categoryId\": 1\n}"
+        "text": "{\n  \"name\": \"Guitarra Fender Stratocaster\",\n  \"type\": \"Guitarra Eléctrica\",\n  \"price\": 15000.00,\n  \"description\": \"Guitarra eléctrica de cuerpo sólido\",\n  \"color\": \"Sunburst\",\n  \"size\": \"Full\",\n  \"brand\": \"Fender\",\n  \"model\": \"Stratocaster\",\n  \"categoryId\": 1,\n  \"stock\": 10\n}"
       }
     },
     {
@@ -123,7 +129,7 @@
       ],
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"name\": \"Guitarra Gibson Les Paul\",\n  \"type\": \"Guitarra Eléctrica\",\n  \"price\": 20000.00,\n  \"description\": \"Guitarra eléctrica premium\",\n  \"color\": \"Negro\",\n  \"size\": \"Full\",\n  \"brand\": \"Gibson\",\n  \"model\": \"Les Paul Standard\",\n  \"categoryId\": 1\n}"
+        "text": "{\n  \"name\": \"Guitarra Gibson Les Paul\",\n  \"type\": \"Guitarra Eléctrica\",\n  \"price\": 20000.00,\n  \"description\": \"Guitarra eléctrica premium\",\n  \"color\": \"Negro\",\n  \"size\": \"Full\",\n  \"brand\": \"Gibson\",\n  \"model\": \"Les Paul Standard\",\n  \"categoryId\": 1,\n  \"stock\": 15\n}"
       }
     },
     {
@@ -145,6 +151,72 @@
       "name": "Obtener todas las categorías",
       "method": "GET",
       "url": "{{ _.base_url }}/musical-instruments/categories",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ _.token }}" }
+      ]
+    },
+
+    {
+      "_id": "req_get_all_events",
+      "_type": "request",
+      "parentId": "fld_events",
+      "name": "Obtener todos los eventos",
+      "method": "GET",
+      "url": "{{ _.base_url }}/events",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ _.token }}" }
+      ]
+    },
+    {
+      "_id": "req_get_event_by_id",
+      "_type": "request",
+      "parentId": "fld_events",
+      "name": "Obtener evento por ID",
+      "method": "GET",
+      "url": "{{ _.base_url }}/events/1",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ _.token }}" }
+      ]
+    },
+    {
+      "_id": "req_create_event",
+      "_type": "request",
+      "parentId": "fld_events",
+      "name": "Crear evento",
+      "method": "POST",
+      "url": "{{ _.base_url }}/events",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "Authorization", "value": "Bearer {{ _.token }}" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Concierto de Primavera\",\n  \"description\": \"Evento musical al aire libre\",\n  \"eventDate\": \"2026-07-15T19:00:00\",\n  \"location\": \"Auditorio Nacional\",\n  \"instruments\": [\n    { \"instrumentId\": 1, \"quantity\": 3 },\n    { \"instrumentId\": 2, \"quantity\": 1 }\n  ]\n}"
+      }
+    },
+    {
+      "_id": "req_update_event",
+      "_type": "request",
+      "parentId": "fld_events",
+      "name": "Actualizar evento",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/events/1",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "Authorization", "value": "Bearer {{ _.token }}" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Concierto de Primavera (actualizado)\",\n  \"description\": \"Evento musical al aire libre con más instrumentos\",\n  \"eventDate\": \"2026-07-20T20:00:00\",\n  \"location\": \"Teatro Metropolitan\",\n  \"instruments\": [\n    { \"instrumentId\": 1, \"quantity\": 2 }\n  ]\n}"
+      }
+    },
+    {
+      "_id": "req_delete_event",
+      "_type": "request",
+      "parentId": "fld_events",
+      "name": "Eliminar evento",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/events/1",
       "headers": [
         { "name": "Authorization", "value": "Bearer {{ _.token }}" }
       ]

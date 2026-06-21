@@ -1,0 +1,356 @@
+{
+  "communities": {
+    "0": [
+      "claims",
+      "date",
+      "function",
+      "object",
+      "secretkey",
+      "security_jwtservice",
+      "security_jwtservice_jwtservice",
+      "security_jwtservice_jwtservice_extractallclaims",
+      "security_jwtservice_jwtservice_extractclaim",
+      "security_jwtservice_jwtservice_extractexpiration",
+      "security_jwtservice_jwtservice_extractusername",
+      "security_jwtservice_jwtservice_generatetoken",
+      "security_jwtservice_jwtservice_getsigningkey",
+      "security_jwtservice_jwtservice_istokenexpired",
+      "security_jwtservice_jwtservice_istokenvalid",
+      "src_main_java_com_geo_prueba_tecnica_app_security_jwtservice_java_map",
+      "src_main_java_com_geo_prueba_tecnica_app_security_jwtservice_java_string",
+      "src_main_java_com_geo_prueba_tecnica_app_security_jwtservice_java_userdetails",
+      "t"
+    ],
+    "1": [
+      "controller_musicalintrumentcontroller",
+      "controller_musicalintrumentcontroller_musicalintrumentcontroller",
+      "controller_musicalintrumentcontroller_musicalintrumentcontroller_create",
+      "controller_musicalintrumentcontroller_musicalintrumentcontroller_delete",
+      "controller_musicalintrumentcontroller_musicalintrumentcontroller_getall",
+      "controller_musicalintrumentcontroller_musicalintrumentcontroller_getallcategories",
+      "controller_musicalintrumentcontroller_musicalintrumentcontroller_getbyid",
+      "controller_musicalintrumentcontroller_musicalintrumentcontroller_update",
+      "deletemapping",
+      "getmapping",
+      "putmapping",
+      "src_main_java_com_geo_prueba_tecnica_app_controller_musicalintrumentcontroller_java_createrequest",
+      "src_main_java_com_geo_prueba_tecnica_app_controller_musicalintrumentcontroller_java_integer",
+      "src_main_java_com_geo_prueba_tecnica_app_controller_musicalintrumentcontroller_java_list",
+      "src_main_java_com_geo_prueba_tecnica_app_controller_musicalintrumentcontroller_java_postmapping",
+      "src_main_java_com_geo_prueba_tecnica_app_controller_musicalintrumentcontroller_java_response",
+      "src_main_java_com_geo_prueba_tecnica_app_controller_musicalintrumentcontroller_java_responseentity",
+      "src_main_java_com_geo_prueba_tecnica_app_controller_musicalintrumentcontroller_java_string"
+    ],
+    "2": [
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_cwd",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_details_components",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_hook_event_name",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_session_id",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_timestamp",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_tool_input",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_tool_input_details",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_tool_input_event",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_tool_input_phase",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_tool_input_projectpath",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_tool_input_status",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_tool_name",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_tool_response",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_tool_use_id",
+      "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_transcript_path"
+    ],
+    "3": [
+      "musicalinstrument",
+      "repository_musicalinstrumentrepository",
+      "repository_musicalinstrumentrepository_musicalinstrumentrepository",
+      "services_musicalinstrumentservices",
+      "services_musicalinstrumentservices_musicalinstrumentservices",
+      "services_musicalinstrumentservices_musicalinstrumentservices_create",
+      "services_musicalinstrumentservices_musicalinstrumentservices_deletebyid",
+      "services_musicalinstrumentservices_musicalinstrumentservices_getall",
+      "services_musicalinstrumentservices_musicalinstrumentservices_getallcategories",
+      "services_musicalinstrumentservices_musicalinstrumentservices_getbyid",
+      "services_musicalinstrumentservices_musicalinstrumentservices_toresponse",
+      "services_musicalinstrumentservices_musicalinstrumentservices_update",
+      "src_main_java_com_geo_prueba_tecnica_app_services_musicalinstrumentservices_java_createrequest",
+      "src_main_java_com_geo_prueba_tecnica_app_services_musicalinstrumentservices_java_integer",
+      "src_main_java_com_geo_prueba_tecnica_app_services_musicalinstrumentservices_java_list",
+      "src_main_java_com_geo_prueba_tecnica_app_services_musicalinstrumentservices_java_response"
+    ],
+    "4": [
+      "optional",
+      "repository_userrepository",
+      "repository_userrepository_userrepository",
+      "repository_userrepository_userrepository_existsbyemail",
+      "repository_userrepository_userrepository_existsbyusername",
+      "repository_userrepository_userrepository_findbyemail",
+      "repository_userrepository_userrepository_findbyusername",
+      "services_authservice_authservice",
+      "services_authservice_authservice_login",
+      "services_authservice_authservice_register",
+      "src_main_java_com_geo_prueba_tecnica_app_repository_userrepository_java_string",
+      "src_main_java_com_geo_prueba_tecnica_app_services_authservice_java_authresponse",
+      "src_main_java_com_geo_prueba_tecnica_app_services_authservice_java_loginrequest",
+      "src_main_java_com_geo_prueba_tecnica_app_services_authservice_java_registerrequest",
+      "user"
+    ],
+    "5": [
+      "plan_java_21",
+      "plan_maven_compiler_plugin",
+      "plan_upgrade_plan",
+      "readme_flyway",
+      "readme_java_17",
+      "readme_postgresql",
+      "readme_prueba_tecnica_api",
+      "readme_spring_boot",
+      "readme_v1_users",
+      "readme_v2_categories",
+      "readme_v3_instruments"
+    ],
+    "6": [
+      "collection",
+      "entity_user",
+      "entity_user_user",
+      "entity_user_user_getauthorities",
+      "entity_user_user_isaccountnonexpired",
+      "entity_user_user_isaccountnonlocked",
+      "entity_user_user_iscredentialsnonexpired",
+      "entity_user_user_isenabled",
+      "grantedauthority",
+      "src_main_java_com_geo_prueba_tecnica_app_entity_user_java_override"
+    ],
+    "7": [
+      "config_globalexceptionhandle",
+      "config_globalexceptionhandle_globalexceptionhandle",
+      "config_globalexceptionhandle_globalexceptionhandle_handleruntimeexception",
+      "config_globalexceptionhandle_globalexceptionhandle_handlevalidationexceptions",
+      "exceptionhandler",
+      "methodargumentnotvalidexception",
+      "runtimeexception",
+      "src_main_java_com_geo_prueba_tecnica_app_config_globalexceptionhandle_java_map",
+      "src_main_java_com_geo_prueba_tecnica_app_config_globalexceptionhandle_java_responseentity",
+      "src_main_java_com_geo_prueba_tecnica_app_config_globalexceptionhandle_java_string"
+    ],
+    "8": [
+      "authenticationconfiguration",
+      "authenticationmanager",
+      "authenticationprovider",
+      "config_applicationconfig",
+      "config_applicationconfig_applicationconfig",
+      "passwordencoder",
+      "services_authservice",
+      "src_main_java_com_geo_prueba_tecnica_app_config_applicationconfig_java_bean",
+      "userdetailsservice"
+    ],
+    "9": [
+      "bigdecimal",
+      "dto_musicalinstrumentdto",
+      "dto_musicalinstrumentdto_createrequest",
+      "dto_musicalinstrumentdto_musicalinstrumentdto",
+      "dto_musicalinstrumentdto_response",
+      "entity_musicalinstrument",
+      "entity_musicalinstrument_musicalinstrument",
+      "src_main_java_com_geo_prueba_tecnica_app_dto_musicalinstrumentdto_java_integer",
+      "src_main_java_com_geo_prueba_tecnica_app_dto_musicalinstrumentdto_java_string"
+    ],
+    "10": [
+      "controller_authcontroller",
+      "controller_authcontroller_authcontroller",
+      "controller_authcontroller_authcontroller_login",
+      "controller_authcontroller_authcontroller_register",
+      "src_main_java_com_geo_prueba_tecnica_app_controller_authcontroller_java_authresponse",
+      "src_main_java_com_geo_prueba_tecnica_app_controller_authcontroller_java_loginrequest",
+      "src_main_java_com_geo_prueba_tecnica_app_controller_authcontroller_java_postmapping",
+      "src_main_java_com_geo_prueba_tecnica_app_controller_authcontroller_java_registerrequest",
+      "src_main_java_com_geo_prueba_tecnica_app_controller_authcontroller_java_responseentity"
+    ],
+    "11": [
+      "filterchain",
+      "httpservletrequest",
+      "httpservletresponse",
+      "onceperrequestfilter",
+      "readme_jwt",
+      "security_jwtauthenticationfilter",
+      "security_jwtauthenticationfilter_jwtauthenticationfilter_dofilterinternal",
+      "src_main_java_com_geo_prueba_tecnica_app_security_jwtauthenticationfilter_java_override"
+    ],
+    "12": [
+      "dto_categoryinstrumentdto",
+      "dto_categoryinstrumentdto_categoryinstrumentdto",
+      "dto_categoryinstrumentdto_createrequest",
+      "dto_categoryinstrumentdto_response",
+      "entity_categoryinstrument_categoryinstrument",
+      "src_main_java_com_geo_prueba_tecnica_app_dto_categoryinstrumentdto_java_integer",
+      "src_main_java_com_geo_prueba_tecnica_app_dto_categoryinstrumentdto_java_string"
+    ],
+    "13": [
+      "config_securityconfig",
+      "config_securityconfig_securityconfig",
+      "corsconfigurationsource",
+      "httpsecurity",
+      "securityfilterchain",
+      "src_main_java_com_geo_prueba_tecnica_app_config_securityconfig_java_bean"
+    ],
+    "14": [
+      "dto_authdto",
+      "dto_authdto_authdto",
+      "dto_authdto_authresponse",
+      "dto_authdto_loginrequest",
+      "dto_authdto_registerrequest",
+      "src_main_java_com_geo_prueba_tecnica_app_dto_authdto_java_string"
+    ],
+    "15": [
+      "insomnia_collection",
+      "insomnia_collection_export_date",
+      "insomnia_collection_export_format",
+      "insomnia_collection_export_source",
+      "insomnia_collection_resources",
+      "insomnia_collection_type"
+    ],
+    "16": [
+      "app_pruebatecnicaapplication",
+      "app_pruebatecnicaapplication_pruebatecnicaapplication",
+      "app_pruebatecnicaapplication_pruebatecnicaapplication_main",
+      "src_main_java_com_geo_prueba_tecnica_app_pruebatecnicaapplication_java_string"
+    ],
+    "17": [
+      "github_modernize_java_upgrade_hooks_scripts_recordtooluse_sh_scripts_recordtooluse",
+      "users_emmanuelalvarohernandezrodriguez_documents_proyectos_crud_proyect_geo_prueba_tecnica_prueba_tecnica_github_modernize_java_upgrade_hooks_scripts_recordtooluse_sh__entry"
+    ],
+    "18": [
+      "repository_categoryinstrumentrepository",
+      "repository_categoryinstrumentrepository_categoryinstrumentrepository"
+    ],
+    "19": [
+      "entity_role"
+    ],
+    "20": [
+      "github_modernize_java_upgrade_hooks_scripts_recordtooluse_ps1_scripts_recordtooluse"
+    ]
+  },
+  "cohesion": {
+    "0": 0.23976608187134502,
+    "1": 0.24836601307189543,
+    "2": 0.125,
+    "3": 0.24166666666666667,
+    "4": 0.22857142857142856,
+    "5": 0.2,
+    "6": 0.3333333333333333,
+    "7": 0.35555555555555557,
+    "8": 0.5555555555555556,
+    "9": 0.25,
+    "10": 0.3333333333333333,
+    "11": 0.39285714285714285,
+    "12": 0.2857142857142857,
+    "13": 0.7333333333333333,
+    "14": 0.3333333333333333,
+    "15": 0.3333333333333333,
+    "16": 0.5,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0
+  },
+  "gods": [
+    {
+      "id": "security_jwtservice_jwtservice",
+      "label": "JwtService",
+      "degree": 9
+    },
+    {
+      "id": "services_musicalinstrumentservices_musicalinstrumentservices",
+      "label": "MusicalInstrumentServices",
+      "degree": 8
+    },
+    {
+      "id": "controller_musicalintrumentcontroller_musicalintrumentcontroller",
+      "label": "MusicalIntrumentController",
+      "degree": 7
+    },
+    {
+      "id": "src_main_java_com_geo_prueba_tecnica_app_controller_musicalintrumentcontroller_java_responseentity",
+      "label": "ResponseEntity",
+      "degree": 7
+    },
+    {
+      "id": "entity_user_user",
+      "label": "User",
+      "degree": 7
+    },
+    {
+      "id": "src_main_java_com_geo_prueba_tecnica_app_security_jwtservice_java_string",
+      "label": "String",
+      "degree": 7
+    },
+    {
+      "id": "hooks_5dbb94d2_1091_4384_90f7_bec5547cd180_tool_input",
+      "label": "tool_input",
+      "degree": 6
+    },
+    {
+      "id": "userdetailsservice",
+      "label": "UserDetailsService",
+      "degree": 6
+    },
+    {
+      "id": "authenticationprovider",
+      "label": "AuthenticationProvider",
+      "degree": 6
+    },
+    {
+      "id": "src_main_java_com_geo_prueba_tecnica_app_security_jwtservice_java_userdetails",
+      "label": "UserDetails",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Upgrade Plan: prueba_tecnica (20260621223240)",
+      "target": "Prueba T\u00e9cnica \u2014 API REST Instrumentos Musicales",
+      "source_files": [
+        ".github/modernize/java-upgrade/20260621223240/plan.md",
+        "README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    },
+    {
+      "source": "Java 21",
+      "target": "Java 17",
+      "source_files": [
+        ".github/modernize/java-upgrade/20260621223240/plan.md",
+        "README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    },
+    {
+      "source": "Upgrade Plan: prueba_tecnica (20260621223240)",
+      "target": "maven-compiler-plugin 3.11.0",
+      "source_files": [
+        ".github/modernize/java-upgrade/20260621223240/plan.md",
+        "pom.xml"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "implements",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "User",
+      "target": "UserDetails",
+      "source_files": [
+        "src/main/java/com/GEO/prueba_tecnica/app/entity/User.java",
+        "src/main/java/com/GEO/prueba_tecnica/app/security/JwtService.java"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "implements",
+      "why": "bridges separate communities"
+    }
+  ],
+  "tokens": {
+    "input": 2930,
+    "output": 2514
+  }
+}

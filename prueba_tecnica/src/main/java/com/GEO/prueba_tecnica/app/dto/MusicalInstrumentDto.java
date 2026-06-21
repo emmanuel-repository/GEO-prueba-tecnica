@@ -41,6 +41,10 @@ public class MusicalInstrumentDto {
 
             @NotBlank(message = "Campo 'marca' no puede estar vacío")
             private String brand;
+
+            @NotNull(message = "Campo 'stock' no puede estar vacío")
+            @Min(value = 0, message = "El stock no puede ser negativo")
+            private Integer stock;
         }
 
         @Data
@@ -55,9 +59,10 @@ public class MusicalInstrumentDto {
             private String brand;
             private String model;
             private int categoryId;
+            private Integer stock;
 
-            public Response(Integer id, String name, String type, BigDecimal price, String description, 
-                            String color, String size, String brand, String model, int categoryId) {
+            public Response(Integer id, String name, String type, BigDecimal price, String description,
+                            String color, String size, String brand, String model, int categoryId, Integer stock) {
 
                 this.id = id;
                 this.name = name;
@@ -69,6 +74,7 @@ public class MusicalInstrumentDto {
                 this.brand = brand;
                 this.model = model;
                 this.categoryId = categoryId;
+                this.stock = stock;
             }
         }
 
