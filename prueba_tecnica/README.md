@@ -1,6 +1,6 @@
 # Prueba Técnica — API REST Instrumentos Musicales
 
-API REST desarrollada con **Spring Boot 3.2.4** para la gestión de instrumentos musicales, con autenticación JWT y migraciones de base de datos con Flyway.
+API REST desarrollada con **Spring Boot 3.2.4** para la gestión de instrumentos musicales y eventos (con control de stock de instrumentos por evento), con autenticación JWT y migraciones de base de datos con Flyway.
 
 ---
 
@@ -67,13 +67,17 @@ src/main/resources/db/migration/
 | `V1__create_users_table.sql` | Crea la tabla `users` para autenticación |
 | `V2__create_category_instruments_table.sql` | Crea la tabla `category_instruments` |
 | `V3__create_musical_instruments_table.sql` | Crea la tabla `musical_instruments` |
+| `V4__add_stock_to_musical_instruments.sql` | Agrega la columna `stock` a `musical_instruments` |
+| `V5__create_events_table.sql` | Crea la tabla `events` |
+| `V6__create_event_instruments_table.sql` | Crea la tabla intermedia `event_instruments` (instrumentos asignados a cada evento) |
+| `V7__add_status_to_events.sql` | Agrega la columna `status` a `events` (1 = agendado, 0 = finalizado) |
 
 ### ⚠️ Importante
 
 - **No es necesario** ejecutar `mvn flyway:migrate` manualmente
 - Las migraciones corren solas al hacer `mvn spring-boot:run`
 - **Nunca modifiques** un archivo de migración ya ejecutado — Flyway valida un checksum de cada archivo y fallará si detecta cambios
-- Para nuevos cambios en la BD, crea un nuevo archivo con la siguiente versión: `V4__descripcion.sql`
+- Para nuevos cambios en la BD, crea un nuevo archivo con la siguiente versión disponible (p. ej. `V8__descripcion.sql`)
 
 ---
 
@@ -154,9 +158,75 @@ POST /auth/login
   "size": "Full",
   "brand": "Fender",
   "model": "Stratocaster",
-  "categoryId": 1
+  "categoryId": 1,
+  "stock": 10
 }
 ```
+
+> El campo `stock` indica cuántas unidades del instrumento hay disponibles para asignar a eventos. No puede ser negativo.
+
+---
+
+### 🎉 Eventos — `/events`
+
+> Todos los endpoints requieren el header: `Authorization: Bearer <token>`
+
+Un evento puede tener asignados varios instrumentos (sin límite de cantidad de instrumentos distintos). Al asignar instrumentos a un evento se **descuenta su stock**; si no hay stock suficiente, la asignación falla. Al **finalizar** o **eliminar** un evento agendado, el stock de sus instrumentos se **devuelve**.
+
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| GET | `/events` | Obtener todos los eventos |
+| GET | `/events/{id}` | Obtener evento por ID |
+| POST | `/events` | Crear nuevo evento y asignar instrumentos (descuenta stock) |
+| PUT | `/events/{id}` | Actualizar evento (recalcula el stock) |
+| PUT | `/events/{id}/finalize` | Finalizar evento y devolver el stock de sus instrumentos |
+| DELETE | `/events/{id}` | Eliminar evento (devuelve el stock si seguía agendado) |
+
+#### Crear / Actualizar evento
+```json
+{
+  "name": "Concierto de Primavera",
+  "description": "Evento musical al aire libre",
+  "eventDate": "2026-07-15T19:00:00",
+  "location": "Auditorio Nacional",
+  "instruments": [
+    { "instrumentId": 1, "quantity": 3 },
+    { "instrumentId": 2, "quantity": 1 }
+  ]
+}
+```
+
+> `eventDate` usa el formato ISO `yyyy-MM-ddTHH:mm:ss`.
+
+#### Respuesta
+```json
+{
+  "id": 1,
+  "name": "Concierto de Primavera",
+  "description": "Evento musical al aire libre",
+  "eventDate": "2026-07-15T19:00:00",
+  "location": "Auditorio Nacional",
+  "status": 1,
+  "instruments": [
+    { "instrumentId": 1, "name": "Guitarra Fender Stratocaster", "quantity": 3 },
+    { "instrumentId": 2, "name": "Bajo Jazz", "quantity": 1 }
+  ]
+}
+```
+
+> `status`: `1` = agendado, `0` = finalizado. Un evento finalizado no puede editarse ni finalizarse de nuevo.
+
+---
+
+## Manejo de errores
+
+Las respuestas de error devuelven un cuerpo JSON con el formato `{ "error": "mensaje" }` (las validaciones de campos devuelven un objeto con un mensaje por campo).
+
+| Código | Cuándo |
+|--------|--------|
+| `400 Bad Request` | Errores de validación de campos (campos vacíos, valores inválidos) |
+| `404 Not Found` | Recurso no encontrado (ID inexistente) |
+| `409 Conflict` | Violación de regla de negocio: stock insuficiente, evento ya finalizado, o editar un evento finalizado |
 
 ---
 
