@@ -69,8 +69,18 @@ public class EventController {
     }
 
     /*
+     * Método para finalizar un evento (devuelve el stock de los instrumentos)
+     *
+     * @param id El ID del evento a finalizar
+     */
+    @PutMapping("/{id}/finalize")
+    public ResponseEntity<EventDto.Response> finalize(@PathVariable Integer id) {
+        return ResponseEntity.ok(eventService.finalizeEvent(id));
+    }
+
+    /*
      * Método para eliminar un evento
-     * 
+     *
      * @param id El ID del evento a eliminar
      */
     @DeleteMapping("/{id}")

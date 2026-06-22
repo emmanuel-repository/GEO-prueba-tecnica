@@ -18,7 +18,7 @@ export default function FormInstrument() {
   const { register, handleSubmit, setValue, formState: { errors }, getValues } = useForm<MusicalInstrumentFormData>({
     defaultValues: {
       name: "", type: "", price: 0, description: "",
-      color: "", size: "", brand: "", model: "", categoryId: 0,
+      color: "", size: "", brand: "", model: "", categoryId: 0, stock: 0,
     },
   });
 
@@ -128,6 +128,12 @@ export default function FormInstrument() {
                       </SelectContent>
                     </Select>
                     {errors.categoryId && <span className="text-red-500 text-sm">Campo requerido</span>}
+                  </div>
+
+                  <div className="flex flex-col space-y-1.5">
+                    <Label>Stock:</Label>
+                    <Input type="number" min={0} {...register('stock', { required: true, valueAsNumber: true, min: 0 })} />
+                    {errors.stock && <span className="text-red-500 text-sm">Campo requerido (no negativo)</span>}
                   </div>
 
                 </div>

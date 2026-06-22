@@ -10,6 +10,7 @@ import com.GEO.prueba_tecnica.app.dto.EventDto;
 import com.GEO.prueba_tecnica.app.entity.Event;
 import com.GEO.prueba_tecnica.app.entity.EventInstrument;
 import com.GEO.prueba_tecnica.app.entity.MusicalInstrument;
+import com.GEO.prueba_tecnica.app.exception.BusinessException;
 import com.GEO.prueba_tecnica.app.repository.EventInstrumentRepository;
 import com.GEO.prueba_tecnica.app.repository.EventRepository;
 import com.GEO.prueba_tecnica.app.repository.MusicalInstrumentRepository;
@@ -42,6 +43,7 @@ public class EventService {
                 .description(request.getDescription())
                 .eventDate(request.getEventDate())
                 .location(request.getLocation())
+                .status(1) // 1 = agendado
                 .build();
 
         event = eventRepository.save(event);
@@ -71,6 +73,10 @@ public class EventService {
 
         Event event = eventRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Evento no encontrado con ID: " + id));
+
+        if (event.getStatus() == 0) {
+            throw new BusinessException("No se puede editar un evento finalizado");
+        }
 
         event.setName(request.getName());
         event.setDescription(request.getDescription());
@@ -127,13 +133,45 @@ public class EventService {
     @Transactional
     public void deleteById(Integer id) {
 
-        if (!eventRepository.existsById(id)) {
-            throw new RuntimeException("El evento que quiero eliminar no existe con ID: " + id);
+        Event event = eventRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("El evento que quiero eliminar no existe con ID: " + id));
+
+        // Solo devolver stock si el evento seguía agendado; si ya estaba
+        // finalizado, el stock ya fue devuelto y no debe contarse dos veces.
+        if (event.getStatus() == 1) {
+            restoreStock(id);
+        }
+
+        eventInstrumentRepository.deleteByEventId(id);
+        eventRepository.deleteById(id);
+    }
+
+    /*
+     * Método para finalizar un evento. Devuelve el stock de los instrumentos
+     * asignados y marca el evento como finalizado (status = 0), conservando el
+     * registro de qué instrumentos usó.
+     *
+     * @param id El ID del evento a finalizar
+     *
+     * @return Un objeto EventDto.Response que representa el evento finalizado
+     *
+     * @throws RuntimeException Si el evento no existe o ya está finalizado
+     */
+    @Transactional
+    public EventDto.Response finalizeEvent(Integer id) {
+
+        Event event = eventRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Evento no encontrado con ID: " + id));
+
+        if (event.getStatus() == 0) {
+            throw new BusinessException("El evento ya está finalizado");
         }
 
         restoreStock(id);
-        eventInstrumentRepository.deleteByEventId(id);
-        eventRepository.deleteById(id);
+        event.setStatus(0); // 0 = finalizado
+        eventRepository.save(event);
+
+        return getById(id);
     }
 
     /*
@@ -155,7 +193,7 @@ public class EventService {
                             "Instrumento musical no encontrado con ID: " + assignment.getInstrumentId()));
 
             if (instrument.getStock() < assignment.getQuantity()) {
-                throw new RuntimeException(
+                throw new BusinessException(
                         "Stock insuficiente para el instrumento '" + instrument.getName() + "'. Disponible: "
                                 + instrument.getStock() + ", solicitado: " + assignment.getQuantity());
             }
@@ -219,6 +257,7 @@ public class EventService {
                 event.getDescription(),
                 event.getEventDate(),
                 event.getLocation(),
+                event.getStatus(),
                 instruments);
     }
 

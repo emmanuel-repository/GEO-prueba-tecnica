@@ -133,6 +133,12 @@ export default function FormUpdateInstrument() {
                     {errors.categoryId && <span className="text-red-500 text-sm">Campo requerido</span>}
                   </div>
 
+                  <div className="flex flex-col space-y-1.5">
+                    <Label>Stock:</Label>
+                    <Input type="number" min={0} {...register('stock', { required: true, valueAsNumber: true, min: 0 })} />
+                    {errors.stock && <span className="text-red-500 text-sm">Campo requerido (no negativo)</span>}
+                  </div>
+
                 </div>
               </div>
 

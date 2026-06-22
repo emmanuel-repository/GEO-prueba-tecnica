@@ -1,0 +1,476 @@
+{
+  "communities": {
+    "0": [
+      "auth_loginpage",
+      "auth_loginpage_loginpage",
+      "auth_registerpage",
+      "auth_registerpage_registerpage",
+      "instruments_forminstrument",
+      "instruments_formupdateinstrument",
+      "interfaces_api_interface",
+      "interfaces_api_interface_apierror",
+      "interfaces_auth_interface",
+      "interfaces_auth_interface_authresponse",
+      "interfaces_auth_interface_loginrequest",
+      "interfaces_auth_interface_registerrequest",
+      "interfaces_category_interface",
+      "interfaces_category_interface_category",
+      "main_layout",
+      "main_layout_layout",
+      "services_auth_service",
+      "stores_auth_store",
+      "stores_auth_store_useauthstore",
+      "ui_button",
+      "ui_button_button",
+      "ui_button_buttonprops",
+      "ui_button_buttonvariants",
+      "ui_card",
+      "ui_card_card",
+      "ui_card_cardcontent",
+      "ui_card_carddescription",
+      "ui_card_cardfooter",
+      "ui_card_cardheader",
+      "ui_card_cardtitle",
+      "ui_input",
+      "ui_input_input",
+      "ui_label",
+      "ui_label_label",
+      "ui_label_labelvariants"
+    ],
+    "1": [
+      "custom_alertcustom",
+      "custom_alertcustom_dangeralert",
+      "custom_alertcustom_dangeralertprops",
+      "lib_utils",
+      "lib_utils_cn",
+      "ui_alert",
+      "ui_alert_alert",
+      "ui_alert_alertdescription",
+      "ui_alert_alerttitle",
+      "ui_alert_alertvariants",
+      "ui_avatar",
+      "ui_avatar_avatar",
+      "ui_avatar_avatarfallback",
+      "ui_avatar_avatarimage",
+      "ui_dialog",
+      "ui_dialog_dialogcontent",
+      "ui_dialog_dialogdescription",
+      "ui_dialog_dialogfooter",
+      "ui_dialog_dialogheader",
+      "ui_dialog_dialogoverlay",
+      "ui_dialog_dialogtitle",
+      "ui_dropdown_menu",
+      "ui_dropdown_menu_dropdownmenucheckboxitem",
+      "ui_dropdown_menu_dropdownmenucontent",
+      "ui_dropdown_menu_dropdownmenuitem",
+      "ui_dropdown_menu_dropdownmenulabel",
+      "ui_dropdown_menu_dropdownmenuradioitem",
+      "ui_dropdown_menu_dropdownmenuseparator",
+      "ui_dropdown_menu_dropdownmenushortcut",
+      "ui_dropdown_menu_dropdownmenusubcontent",
+      "ui_dropdown_menu_dropdownmenusubtrigger",
+      "ui_separator",
+      "ui_separator_separator"
+    ],
+    "2": [
+      "custom_swal",
+      "custom_swal_alertloader",
+      "custom_swal_closealert",
+      "custom_swal_confirmationalert",
+      "custom_swal_infoalert",
+      "custom_swal_myswal",
+      "custom_swal_successalert",
+      "hooks_useapi",
+      "hooks_useapi_useapi",
+      "hooks_useapi_useapioptions",
+      "hooks_useapi_useapiresult",
+      "hooks_usedelete",
+      "hooks_usedelete_usedeletecontact",
+      "hooks_usedelete_usedeleteemail",
+      "hooks_usedelete_usedeletephone",
+      "hooks_usedeleteinstrument",
+      "hooks_usedeleteinstrument_apierror",
+      "hooks_usedeleteinstrument_usedeleteinstrument",
+      "instruments_forminstrument_forminstrument",
+      "instruments_formupdateinstrument_formupdateinstrument",
+      "instruments_listinstruments_listinstruments",
+      "instruments_maininstrument",
+      "instruments_maininstrument_maininstrument",
+      "interfaces_musicalinstrument_interface",
+      "interfaces_musicalinstrument_interface_musicalinstrument",
+      "interfaces_musicalinstrument_interface_musicalinstrumentformdata",
+      "lib_fetchwithauth",
+      "lib_fetchwithauth_fetchwithauth",
+      "services_musicalinstrument_service",
+      "stores_musicalinstrument_store",
+      "stores_musicalinstrument_store_defaultinstrument",
+      "stores_musicalinstrument_store_usemusicalinstrumentstore"
+    ],
+    "3": [
+      "package_dependencies",
+      "package_dependencies_class_variance_authority",
+      "package_dependencies_clsx",
+      "package_dependencies_fortawesome_fontawesome_svg_core",
+      "package_dependencies_fortawesome_free_brands_svg_icons",
+      "package_dependencies_fortawesome_free_regular_svg_icons",
+      "package_dependencies_fortawesome_free_solid_svg_icons",
+      "package_dependencies_fortawesome_react_fontawesome",
+      "package_dependencies_hookform_resolvers",
+      "package_dependencies_jwt_decode",
+      "package_dependencies_lucide",
+      "package_dependencies_lucide_react",
+      "package_dependencies_radix_ui_react_avatar",
+      "package_dependencies_radix_ui_react_dialog",
+      "package_dependencies_radix_ui_react_dropdown_menu",
+      "package_dependencies_radix_ui_react_label",
+      "package_dependencies_radix_ui_react_select",
+      "package_dependencies_radix_ui_react_separator",
+      "package_dependencies_radix_ui_react_slot",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_dependencies_react_hook_form",
+      "package_dependencies_react_icons",
+      "package_dependencies_react_router_dom",
+      "package_dependencies_sweetalert2",
+      "package_dependencies_sweetalert2_react_content",
+      "package_dependencies_tailwind_merge",
+      "package_dependencies_tailwindcss_animate",
+      "package_dependencies_tanstack_react_table",
+      "package_dependencies_yup",
+      "package_dependencies_zustand"
+    ],
+    "4": [
+      "package",
+      "package_devdependencies",
+      "package_devdependencies_autoprefixer",
+      "package_devdependencies_eslint",
+      "package_devdependencies_eslint_js",
+      "package_devdependencies_eslint_plugin_react_hooks",
+      "package_devdependencies_eslint_plugin_react_refresh",
+      "package_devdependencies_globals",
+      "package_devdependencies_postcss",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_types_node",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_typescript",
+      "package_devdependencies_typescript_eslint",
+      "package_devdependencies_vite",
+      "package_devdependencies_vitejs_plugin_react_swc",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_preview",
+      "package_type",
+      "package_version"
+    ],
+    "5": [
+      "custom_tablebodycustom",
+      "custom_tablebodycustom_tablebodycustom",
+      "custom_tablebodycustom_tablebodyprops",
+      "custom_tableheadercustom",
+      "custom_tableheadercustom_tableheadercustom",
+      "instruments_listinstruments",
+      "instruments_listinstruments_listinstrumentsprops",
+      "interfaces_actionstable_interface",
+      "interfaces_actionstable_interface_actionstable",
+      "interfaces_keystable_interface",
+      "interfaces_keystable_interface_keystable",
+      "lib_tables_configs",
+      "lib_tables_configs_getcolumns",
+      "lib_tables_configs_getcolumnsaction",
+      "ui_table",
+      "ui_table_table",
+      "ui_table_tablebody",
+      "ui_table_tablecaption",
+      "ui_table_tablecell",
+      "ui_table_tablefooter",
+      "ui_table_tablehead",
+      "ui_table_tableheader",
+      "ui_table_tablerow"
+    ],
+    "6": [
+      "tsconfig_app",
+      "tsconfig_app_compileroptions",
+      "tsconfig_app_compileroptions_allowimportingtsextensions",
+      "tsconfig_app_compileroptions_baseurl",
+      "tsconfig_app_compileroptions_isolatedmodules",
+      "tsconfig_app_compileroptions_jsx",
+      "tsconfig_app_compileroptions_lib",
+      "tsconfig_app_compileroptions_module",
+      "tsconfig_app_compileroptions_moduledetection",
+      "tsconfig_app_compileroptions_moduleresolution",
+      "tsconfig_app_compileroptions_noemit",
+      "tsconfig_app_compileroptions_nofallthroughcasesinswitch",
+      "tsconfig_app_compileroptions_nouncheckedsideeffectimports",
+      "tsconfig_app_compileroptions_nounusedlocals",
+      "tsconfig_app_compileroptions_nounusedparameters",
+      "tsconfig_app_compileroptions_paths",
+      "tsconfig_app_compileroptions_skiplibcheck",
+      "tsconfig_app_compileroptions_strict",
+      "tsconfig_app_compileroptions_target",
+      "tsconfig_app_compileroptions_tsbuildinfofile",
+      "tsconfig_app_compileroptions_usedefineforclassfields",
+      "tsconfig_app_include",
+      "tsconfig_app_paths"
+    ],
+    "7": [
+      "components",
+      "components_aliases",
+      "components_aliases_components",
+      "components_aliases_hooks",
+      "components_aliases_lib",
+      "components_aliases_ui",
+      "components_aliases_utils",
+      "components_iconlibrary",
+      "components_rsc",
+      "components_schema",
+      "components_style",
+      "components_tailwind",
+      "components_tailwind_basecolor",
+      "components_tailwind_config",
+      "components_tailwind_css",
+      "components_tailwind_cssvariables",
+      "components_tailwind_prefix",
+      "components_tsx"
+    ],
+    "8": [
+      "tsconfig_node",
+      "tsconfig_node_compileroptions",
+      "tsconfig_node_compileroptions_allowimportingtsextensions",
+      "tsconfig_node_compileroptions_isolatedmodules",
+      "tsconfig_node_compileroptions_lib",
+      "tsconfig_node_compileroptions_module",
+      "tsconfig_node_compileroptions_moduledetection",
+      "tsconfig_node_compileroptions_moduleresolution",
+      "tsconfig_node_compileroptions_noemit",
+      "tsconfig_node_compileroptions_nofallthroughcasesinswitch",
+      "tsconfig_node_compileroptions_nouncheckedsideeffectimports",
+      "tsconfig_node_compileroptions_nounusedlocals",
+      "tsconfig_node_compileroptions_nounusedparameters",
+      "tsconfig_node_compileroptions_skiplibcheck",
+      "tsconfig_node_compileroptions_strict",
+      "tsconfig_node_compileroptions_target",
+      "tsconfig_node_compileroptions_tsbuildinfofile",
+      "tsconfig_node_include"
+    ],
+    "9": [
+      "index_main_script",
+      "index_root",
+      "src_app",
+      "src_app_app",
+      "src_app_forminstrument",
+      "src_app_formupdateinstrument",
+      "src_app_layout",
+      "src_app_loginpage",
+      "src_app_maininstrument",
+      "src_app_registerpage",
+      "src_main",
+      "src_protectedroute",
+      "src_protectedroute_customjwtpayload",
+      "src_protectedroute_protectedroute"
+    ],
+    "10": [
+      "custom_paginationtablecustom",
+      "custom_paginationtablecustom_paginationtablecustom",
+      "custom_paginationtablecustom_paginationtablecustomprops",
+      "ui_select",
+      "ui_select_selectcontent",
+      "ui_select_selectitem",
+      "ui_select_selectlabel",
+      "ui_select_selectscrolldownbutton",
+      "ui_select_selectscrollupbutton",
+      "ui_select_selectseparator",
+      "ui_select_selecttrigger"
+    ],
+    "11": [
+      "tsconfig",
+      "tsconfig_compileroptions",
+      "tsconfig_compileroptions_baseurl",
+      "tsconfig_compileroptions_paths",
+      "tsconfig_files",
+      "tsconfig_paths",
+      "tsconfig_references"
+    ],
+    "12": [
+      "custom_profileimagecustom",
+      "custom_profileimagecustom_profileimageupload",
+      "custom_profileimagecustom_profileimageuploadprops"
+    ],
+    "13": [
+      "dockercompose_frontend",
+      "readme_nodejs",
+      "readme_vite_api"
+    ],
+    "14": [
+      "custom_backgroundvideo",
+      "custom_backgroundvideo_backgroundvideo"
+    ],
+    "15": [
+      "interfaces_rowtable_interface",
+      "interfaces_rowtable_interface_rowdata"
+    ],
+    "16": [
+      "eslint_config"
+    ],
+    "17": [
+      "postcss_config"
+    ],
+    "18": [
+      "public_vite_svg"
+    ],
+    "19": [
+      "src_assets_react_svg"
+    ],
+    "20": [
+      "src_vite_env_d"
+    ],
+    "21": [
+      "tailwind_config"
+    ],
+    "22": [
+      "vite_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.15630252100840336,
+    "1": 0.08143939393939394,
+    "2": 0.11693548387096774,
+    "3": 0.06451612903225806,
+    "4": 0.07692307692307693,
+    "5": 0.16600790513833993,
+    "6": 0.08695652173913043,
+    "7": 0.1111111111111111,
+    "8": 0.1111111111111111,
+    "9": 0.14285714285714285,
+    "10": 0.23636363636363636,
+    "11": 0.2857142857142857,
+    "12": 0.6666666666666666,
+    "13": 0.6666666666666666,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0
+  },
+  "gods": [
+    {
+      "id": "tsconfig_app_compileroptions",
+      "label": "compilerOptions",
+      "degree": 20
+    },
+    {
+      "id": "hooks_useapi_useapi",
+      "label": "useApi()",
+      "degree": 17
+    },
+    {
+      "id": "tsconfig_node_compileroptions",
+      "label": "compilerOptions",
+      "degree": 16
+    },
+    {
+      "id": "lib_utils_cn",
+      "label": "cn()",
+      "degree": 15
+    },
+    {
+      "id": "ui_button_button",
+      "label": "Button",
+      "degree": 9
+    },
+    {
+      "id": "stores_auth_store_useauthstore",
+      "label": "useAuthStore",
+      "degree": 7
+    },
+    {
+      "id": "stores_musicalinstrument_store_usemusicalinstrumentstore",
+      "label": "useMusicalInstrumentStore",
+      "degree": 7
+    },
+    {
+      "id": "components_tailwind",
+      "label": "tailwind",
+      "degree": 6
+    },
+    {
+      "id": "components_aliases",
+      "label": "aliases",
+      "degree": 6
+    },
+    {
+      "id": "ui_card_card",
+      "label": "Card",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Node.js",
+      "target": "Frontend Service",
+      "source_files": [
+        "README.md",
+        "docker-compose.yml"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    },
+    {
+      "source": "Frontend Service",
+      "target": "VITE_API",
+      "source_files": [
+        "docker-compose.yml",
+        "README.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "implements",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "DialogHeader()",
+      "target": "cn()",
+      "source_files": [
+        "src/components/ui/dialog.tsx",
+        "src/core/lib/utils.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `DialogHeader()` unexpectedly reaches hub `cn()`"
+    },
+    {
+      "source": "DialogFooter()",
+      "target": "cn()",
+      "source_files": [
+        "src/components/ui/dialog.tsx",
+        "src/core/lib/utils.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `DialogFooter()` unexpectedly reaches hub `cn()`"
+    },
+    {
+      "source": "DropdownMenuShortcut()",
+      "target": "cn()",
+      "source_files": [
+        "src/components/ui/dropdown-menu.tsx",
+        "src/core/lib/utils.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `DropdownMenuShortcut()` unexpectedly reaches hub `cn()`"
+    }
+  ],
+  "tokens": {
+    "input": 5657,
+    "output": 1234
+  }
+}

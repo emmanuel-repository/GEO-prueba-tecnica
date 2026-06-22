@@ -9,6 +9,7 @@ export interface MusicalInstrument {
   brand: string;
   model: string;
   categoryId: number;
+  stock?: number;
 }
 
 export interface MusicalInstrumentFormData {
@@ -22,4 +23,5 @@ export interface MusicalInstrumentFormData {
   brand: string;
   model: string;
   categoryId: number;
+  stock: number;
 }

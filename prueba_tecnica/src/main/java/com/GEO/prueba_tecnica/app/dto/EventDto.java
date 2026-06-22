@@ -51,15 +51,17 @@ public class EventDto {
         private String description;
         private LocalDateTime eventDate;
         private String location;
+        private Integer status;
         private List<AssignedInstrument> instruments;
 
         public Response(Integer id, String name, String description, LocalDateTime eventDate,
-                        String location, List<AssignedInstrument> instruments) {
+                        String location, Integer status, List<AssignedInstrument> instruments) {
             this.id = id;
             this.name = name;
             this.description = description;
             this.eventDate = eventDate;
             this.location = location;
+            this.status = status;
             this.instruments = instruments;
         }
     }

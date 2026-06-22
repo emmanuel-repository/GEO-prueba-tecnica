@@ -14,28 +14,26 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useEffect, useMemo } from "react";
-import { musicalInstrumentService } from "@/core/services/musicalInstrument.service";
-import { useMusicalInstrumentStore } from "@/core/stores/musicalInstrument.store";
+import { eventsService } from "@/core/services/events.service";
+import { useEventStore } from "@/core/stores/event.store";
 
-interface ListInstrumentsProps {
+interface ListEventsProps {
   actions: ActionsTable[];
 }
 
-export const ListInstruments: React.FC<ListInstrumentsProps> = ({ actions }) => {
+export const ListEvents: React.FC<ListEventsProps> = ({ actions }) => {
 
-  const { instrumentList, setInstrumentList } = useMusicalInstrumentStore();
-  const { data: fetchedList, error } = useApi(musicalInstrumentService.getAll);
+  const { eventList, setEventList } = useEventStore();
+  const { data: fetchedList, error } = useApi(eventsService.getAll);
 
   const keysColumns = useMemo<KeysTable[]>(
     () => [
       { keyColumn: "id", description: "ID" },
       { keyColumn: "name", description: "Nombre" },
-      { keyColumn: "brand", description: "Marca" },
-      { keyColumn: "model", description: "Modelo" },
-      { keyColumn: "type", description: "Tipo" },
-      { keyColumn: "price", description: "Precio" },
-      { keyColumn: "color", description: "Color" },
-      { keyColumn: "stock", description: "Stock" },
+      { keyColumn: "location", description: "Ubicación" },
+      { keyColumn: "eventDate", description: "Fecha" },
+      { keyColumn: "instrumentsCount", description: "Instrumentos" },
+      { keyColumn: "statusLabel", description: "Estado" },
     ],
     []
   );
@@ -44,14 +42,24 @@ export const ListInstruments: React.FC<ListInstrumentsProps> = ({ actions }) => 
 
   useEffect(() => {
     if (fetchedList) {
-      setInstrumentList(fetchedList);
+      setEventList(fetchedList);
     } else if (error) {
-      setInstrumentList([]);
+      setEventList([]);
     }
-  }, [fetchedList, error, setInstrumentList]);
+  }, [fetchedList, error, setEventList]);
+
+  // Añade columnas derivadas: conteo de instrumentos y etiqueta de estado
+  const tableData = useMemo(
+    () => eventList.map((e) => ({
+      ...e,
+      instrumentsCount: e.instruments?.length ?? 0,
+      statusLabel: e.status === 1 ? "Agendado" : "Finalizado",
+    })),
+    [eventList]
+  );
 
   const table = useReactTable({
-    data: instrumentList,
+    data: tableData,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),

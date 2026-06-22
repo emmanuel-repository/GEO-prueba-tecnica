@@ -31,7 +31,7 @@ export default function LoginPage() {
       },
       onError: (error: ApiError) => {
         console.error("Login error:", error);
-        setErrorMsg(error.message || "Error al registrar usuario");
+        setErrorMsg("Credenciales incorrectas, por favor intenta de nuevo.");
       },
       autoFetch: false,
     }

@@ -22,6 +22,7 @@ const defaultInstrument: MusicalInstrumentFormData = {
   brand: "",
   model: "",
   categoryId: 0,
+  stock: 0,
 };
 
 export const useMusicalInstrumentStore = create<MusicalInstrumentStore>()(

@@ -34,4 +34,8 @@ public class Event {
     @Column(nullable = false)
     private String location;
 
+    // 1 = agendado, 0 = finalizado
+    @Column(nullable = false)
+    private Integer status;
+
 }

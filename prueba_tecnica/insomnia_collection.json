@@ -211,6 +211,17 @@
       }
     },
     {
+      "_id": "req_finalize_event",
+      "_type": "request",
+      "parentId": "fld_events",
+      "name": "Finalizar evento",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/events/1/finalize",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ _.token }}" }
+      ]
+    },
+    {
       "_id": "req_delete_event",
       "_type": "request",
       "parentId": "fld_events",

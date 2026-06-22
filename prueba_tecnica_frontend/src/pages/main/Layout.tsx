@@ -18,9 +18,14 @@ const Layout: React.FC = () => {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-10 bg-white border-b shadow-sm px-6 py-3 flex items-center justify-between">
         
-        <span className="text-lg font-bold cursor-pointer" onClick={() => navigate("/list-instruments")}  >
-          🎸 Instrumentos Musicales
-        </span>
+        <nav className="flex items-center gap-6">
+          <span className="text-lg font-bold cursor-pointer" onClick={() => navigate("/list-instruments")}  >
+            🎸 Instrumentos Musicales
+          </span>
+          <span className="text-lg font-bold cursor-pointer" onClick={() => navigate("/list-events")}  >
+            🎉 Eventos
+          </span>
+        </nav>
 
         <div className="flex items-center gap-4">
           <span className="text-sm text-gray-500">Hola, <strong>{username}</strong></span>
