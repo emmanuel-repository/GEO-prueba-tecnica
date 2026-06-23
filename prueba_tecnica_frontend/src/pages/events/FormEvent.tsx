@@ -24,6 +24,7 @@ export default function FormEvent() {
     },
   });
 
+  // Configuración del hook useFieldArray para manejar la lista de instrumentos asignados
   const { fields, append, remove } = useFieldArray({ control, name: "instruments" });
 
   // Carga los instrumentos disponibles para asignarlos

@@ -21,9 +21,9 @@ export default function FormUpdateEvent() {
 
   const { register, handleSubmit, setValue, control, formState: { errors }, getValues } = useForm<EventFormData>({
     defaultValues: {
+      // datetime-local espera "yyyy-MM-ddTHH:mm" (sin segundos)
       name: eventData.name,
       description: eventData.description,
-      // datetime-local espera "yyyy-MM-ddTHH:mm" (sin segundos)
       eventDate: eventData.eventDate?.slice(0, 16),
       location: eventData.location,
       instruments: eventData.instruments?.map((i) => ({

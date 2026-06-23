@@ -36,7 +36,8 @@ public class EventService {
      *
      * @return Un objeto EventDto.Response que representa el evento creado
      *
-     * @throws RuntimeException Si un instrumento no existe o no tiene stock suficiente
+     * @throws RuntimeException Si un instrumento no existe o no tiene stock
+     * suficiente
      */
     @Transactional
     public EventDto.Response create(EventDto.CreateRequest request) {
@@ -61,7 +62,8 @@ public class EventService {
     /*
      * Método para actualizar un evento existente.
      * Devuelve el stock de las asignaciones anteriores, las elimina y aplica las
-     * nuevas (descontando stock de nuevo). Así un cambio en la lista de instrumentos
+     * nuevas (descontando stock de nuevo). Así un cambio en la lista de
+     * instrumentos
      * queda siempre consistente.
      *
      * @param id El ID del evento a actualizar
@@ -70,7 +72,8 @@ public class EventService {
      *
      * @return Un objeto EventDto.Response que representa el evento actualizado
      *
-     * @throws RuntimeException Si el evento no existe, o si un instrumento no existe
+     * @throws RuntimeException Si el evento no existe, o si un instrumento no
+     * existe
      * o no tiene stock suficiente
      */
     @Transactional
@@ -192,7 +195,8 @@ public class EventService {
      *
      * @param assignments La lista de instrumentos y cantidades a asignar
      *
-     * @throws RuntimeException Si un instrumento no existe o no tiene stock suficiente
+     * @throws RuntimeException Si un instrumento no existe o no tiene stock
+     * suficiente
      */
     private void assignInstruments(Integer eventId, List<EventDto.InstrumentAssignment> assignments) {
 
@@ -226,7 +230,8 @@ public class EventService {
      *
      * @param eventDate La fecha/hora del evento a validar
      *
-     * @param excludeId ID del evento a excluir de la búsqueda (para actualizaciones);
+     * @param excludeId ID del evento a excluir de la búsqueda (para
+     * actualizaciones);
      * null al crear
      *
      * @throws BusinessException Si ya existe un evento en esa fecha
@@ -236,10 +241,11 @@ public class EventService {
         LocalDate day = eventDate.toLocalDate();
         LocalDateTime startOfDay = day.atStartOfDay();
         LocalDateTime endOfDay = day.atTime(LocalTime.MAX);
+        int agendado = 1; // solo los eventos agendados reservan la fecha; los finalizados no
 
         boolean exists = (excludeId == null)
-                ? eventRepository.existsByEventDateBetween(startOfDay, endOfDay)
-                : eventRepository.existsByEventDateBetweenAndIdNot(startOfDay, endOfDay, excludeId);
+                ? eventRepository.existsByEventDateBetweenAndStatus(startOfDay, endOfDay, agendado)
+                : eventRepository.existsByEventDateBetweenAndStatusAndIdNot(startOfDay, endOfDay, agendado, excludeId);
 
         if (exists) {
             throw new BusinessException("Ya existe un evento agendado para esa fecha");
@@ -276,9 +282,11 @@ public class EventService {
         List<EventDto.AssignedInstrument> instruments = eventInstrumentRepository.findByEventId(event.getId())
                 .stream()
                 .map(assignment -> {
+                    
                     String name = musicalInstrumentRepository.findById(assignment.getInstrumentId())
                             .map(MusicalInstrument::getName)
                             .orElse(null);
+
                     return new EventDto.AssignedInstrument(
                             assignment.getInstrumentId(),
                             name,

@@ -7,9 +7,9 @@ import com.GEO.prueba_tecnica.app.entity.Event;
 
 public interface EventRepository extends JpaRepository<Event, Integer> {
 
-    // ¿Existe algún evento cuya fecha caiga dentro del rango (mismo día)?
-    boolean existsByEventDateBetween(LocalDateTime start, LocalDateTime end);
+    // ¿Existe algún evento con un status dado cuya fecha caiga en el rango (mismo día)?
+    boolean existsByEventDateBetweenAndStatus(LocalDateTime start, LocalDateTime end, Integer status);
 
     // Igual, pero excluyendo un evento (para actualizaciones)
-    boolean existsByEventDateBetweenAndIdNot(LocalDateTime start, LocalDateTime end, Integer id);
+    boolean existsByEventDateBetweenAndStatusAndIdNot(LocalDateTime start, LocalDateTime end, Integer status, Integer id);
 }
