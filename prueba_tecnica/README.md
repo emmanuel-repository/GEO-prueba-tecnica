@@ -248,3 +248,21 @@ El archivo `insomnia_collection.json` en la raíz del proyecto contiene todos lo
 ```
 Insomnia → File → Import → From File → insomnia_collection.json
 ```
+
+## Tests
+
+El proyecto incluye pruebas con **JUnit 5 + Mockito** (incluidas en `spring-boot-starter-test`).
+
+```bash
+# Ejecutar todos los tests
+./mvnw test
+
+# Ejecutar solo una clase
+./mvnw test -Dtest=EventServiceTest
+./mvnw test -Dtest=EventControllerTest
+```
+
+| Clase | Tipo | Qué cubre |
+|-------|------|-----------|
+| `EventServiceTest` | Unitario (Mockito) | Lógica de negocio: descuento/devolución de stock, finalizar evento, validación de fecha duplicada |
+| `EventControllerTest` | Web slice (`@WebMvcTest` + `MockMvc`) | Endpoints `/events`: códigos HTTP, serialización JSON, validación (400) y mapeo de errores de negocio (409) |
