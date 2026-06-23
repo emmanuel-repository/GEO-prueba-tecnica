@@ -1,5 +1,8 @@
 package com.GEO.prueba_tecnica.app.services;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -37,6 +40,8 @@ public class EventService {
      */
     @Transactional
     public EventDto.Response create(EventDto.CreateRequest request) {
+
+        validateDateAvailable(request.getEventDate(), null);
 
         Event event = Event.builder()
                 .name(request.getName())
@@ -78,6 +83,8 @@ public class EventService {
             throw new BusinessException("No se puede editar un evento finalizado");
         }
 
+        validateDateAvailable(request.getEventDate(), id);
+
         event.setName(request.getName());
         event.setDescription(request.getDescription());
         event.setEventDate(request.getEventDate());
@@ -87,6 +94,9 @@ public class EventService {
         // Devolver el stock de las asignaciones actuales antes de reemplazarlas
         restoreStock(id);
         eventInstrumentRepository.deleteByEventId(id);
+        // Forzar el DELETE antes de reinsertar; si no, Hibernate ordena los INSERT
+        // antes que los DELETE y viola el UNIQUE (event_id, instrument_id).
+        eventInstrumentRepository.flush();
 
         assignInstruments(id, request.getInstruments());
 
@@ -208,6 +218,31 @@ public class EventService {
                     .build();
 
             eventInstrumentRepository.save(eventInstrument);
+        }
+    }
+
+    /*
+     * Valida que no exista otro evento agendado el mismo día calendario.
+     *
+     * @param eventDate La fecha/hora del evento a validar
+     *
+     * @param excludeId ID del evento a excluir de la búsqueda (para actualizaciones);
+     * null al crear
+     *
+     * @throws BusinessException Si ya existe un evento en esa fecha
+     */
+    private void validateDateAvailable(LocalDateTime eventDate, Integer excludeId) {
+
+        LocalDate day = eventDate.toLocalDate();
+        LocalDateTime startOfDay = day.atStartOfDay();
+        LocalDateTime endOfDay = day.atTime(LocalTime.MAX);
+
+        boolean exists = (excludeId == null)
+                ? eventRepository.existsByEventDateBetween(startOfDay, endOfDay)
+                : eventRepository.existsByEventDateBetweenAndIdNot(startOfDay, endOfDay, excludeId);
+
+        if (exists) {
+            throw new BusinessException("Ya existe un evento agendado para esa fecha");
         }
     }
 

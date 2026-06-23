@@ -173,6 +173,8 @@ POST /auth/login
 
 Un evento puede tener asignados varios instrumentos (sin límite de cantidad de instrumentos distintos). Al asignar instrumentos a un evento se **descuenta su stock**; si no hay stock suficiente, la asignación falla. Al **finalizar** o **eliminar** un evento agendado, el stock de sus instrumentos se **devuelve**.
 
+> **No se permiten dos eventos el mismo día calendario** (sin importar la hora). Aplica tanto al crear como al actualizar.
+
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
 | GET | `/events` | Obtener todos los eventos |
@@ -226,7 +228,7 @@ Las respuestas de error devuelven un cuerpo JSON con el formato `{ "error": "men
 |--------|--------|
 | `400 Bad Request` | Errores de validación de campos (campos vacíos, valores inválidos) |
 | `404 Not Found` | Recurso no encontrado (ID inexistente) |
-| `409 Conflict` | Violación de regla de negocio: stock insuficiente, evento ya finalizado, o editar un evento finalizado |
+| `409 Conflict` | Violación de regla de negocio: stock insuficiente, evento ya finalizado, editar un evento finalizado, o ya existe un evento en esa fecha |
 
 ---
 
